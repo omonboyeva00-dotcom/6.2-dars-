@@ -5,7 +5,6 @@ from .models import User
 from .serializers import UserSerializer
 
 
-# GET (list) va POST
 class UserListCreateAPIView(APIView):
 
     def get(self, request):
@@ -21,7 +20,6 @@ class UserListCreateAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# GET (detail), PUT, PATCH, DELETE
 class UserDetailAPIView(APIView):
 
     def get_object(self, pk):
